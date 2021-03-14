@@ -12,6 +12,7 @@ import com.example.demo.service.BookService
 @Controller
 class BookController @Autowired constructor(private val bookService: BookService) {
 
+  @CrossOrigin
 	@RequestMapping("/api/books")
 	fun api_index(): ResponseEntity<MutableList<Book>> {
 		return ResponseEntity.ok(bookService.findAllBook())
